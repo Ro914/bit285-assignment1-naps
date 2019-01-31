@@ -1,0 +1,45 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model bit285_assignment1_naps.Models.User
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Account Info";
+}
+
+<h1>New Account Information</h1>
+<fieldset>
+    <form asp-action="AccountInfo" method="post">
+        <div>
+            <label asp-for="FirstName">First Name</label>
+            <input asp-for="FirstName" />
+            <br />
+            <span asp-validation-for="FirstName" class="Validation"></span>
+        </div>
+        <div>
+            <label asp-for="LastName">Last Name</label>
+            <input asp-for="LastName" />
+            <br />
+            <span asp-validation-for="LastName" class="Validation"></span>
+        </div>
+        <div>
+            <label asp-for="EmailAddress">Email Address</label>
+            <input asp-for="EmailAddress" />
+            <br />
+            <span asp-validation-for="EmailAddress" class="Validation"></span>
+        </div>
+        <div>
+            <label asp-for="Program">Program</label>
+            <select asp-for="Program">
+                <option selected disabled>Program</option>
+                <option>Web App Dev</option>
+                <option>Mobile App Dev</option>
+                <option>Front-end Dev</option>
+            </select>
+            <br />
+            <span asp-validation-for="Program" class="Validation"></span>
+        </div>
+        <div>
+            <input type="submit" value="Create Password" />
+            <input type="reset" value="Reset" />
+        </div>
+    </form>
+</fieldset>
